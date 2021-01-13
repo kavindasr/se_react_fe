@@ -1,0 +1,19 @@
+{
+  "name": "se_react_fe",
+  "version": "1.0.0",
+  "description": "REACT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavindasr/se_react_fe.git"
+  },
+  "author": "KSR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavindasr/se_react_fe/issues"
+  },
+  "homepage": "https://github.com/kavindasr/se_react_fe#readme"
+}
