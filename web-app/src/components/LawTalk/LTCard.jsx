@@ -1,15 +1,21 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Card} from 'react-bootstrap';
 
-function LTCard({img,title,author}){
+const styleCa = {padding:'5px', margin: '10px'}
+
+function LTCard({id,img,title,author,onClickLink}){
+    const handle = (e)=>{
+        onClickLink(id);
+    }
     return (
         <>
-            <Card style={{ width: '18rem'},{height: '24rem'}, {padding:'5px'}, {margin: '10px'}}>
+            <Card style={styleCa}>
                 <Card.Img variant="top" src={img} alt="img"/>
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Subtitle>{author}</Card.Subtitle>
-                    <Card.Link href="#">See article</Card.Link>
+                    <Link to="/lawTalk/article" onClick = {handle}>See article</Link>
                 </Card.Body>
             </Card>
         </>

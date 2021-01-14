@@ -8,7 +8,7 @@ function LTHeader(){
             <Card className="bg-dark text-white">
                 <Card.Img src={img} alt="Card image" style={{overflow:'hidden'}}/>
                 <Card.ImgOverlay>
-                    <Card.Title>Law Talks</Card.Title>
+                    <Card.Title></Card.Title>
                 </Card.ImgOverlay>
             </Card>
         </>
