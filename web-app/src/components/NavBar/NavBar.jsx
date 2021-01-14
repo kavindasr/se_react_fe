@@ -17,9 +17,9 @@ function NavBar(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#law_talk">LawTalk</Nav.Link>
-                    <Nav.Link href="#report_complaint">Report complaint</Nav.Link>
+                    <Nav.Link href="/complaint">Home</Nav.Link>
+                    <Nav.Link href="/lawTalk">LawTalk</Nav.Link>
+                    <Nav.Link href="/EmergencyNumbers">Report complaint</Nav.Link>
                 </Nav>
                 <Nav>
                     <Nav.Link href="#sign_in">Sign-in {'  '} <FaUser/></Nav.Link>
