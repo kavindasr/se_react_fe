@@ -1,0 +1,24 @@
+.LeftCol{
+    background: linear-gradient(to bottom, #33cccc 0%, #336699 100%);
+    width: 50vw;
+    height: 100vh;
+}
+
+.RightCol{
+    width: 50vw;
+    height: 100vh;
+    padding-left: 5%;
+}
+
+h2{
+    margin: auto;
+    color: black;
+    font-family: verdana;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline #336699;
+}
+
+.btn-outline-primary{
+    margin-right: 30px;
+}
