@@ -1,0 +1,86 @@
+.home-parent{
+    width:100%;
+    height:100%;   
+    display:flex;
+    align-items:stretch;
+    
+}.left {
+    left: 0;
+    background: #fbe9f9;
+    padding:0%;
+    padding-bottom: 0%;
+    margin:0;
+    width:60%;
+    height:100%;
+}
+
+.right{
+    width:40%;
+    right: 0;
+    background: url(./photo.jpeg)bottom center no-repeat,
+    url(./photo.jpeg) repeat; 
+}
+
+.section-A{
+    height:75vh;
+}
+
+.section-B{
+    padding: 0%;
+    height:13vh; 
+    display:flex;
+}
+
+.section-c{
+    background-color: #1804af;
+    padding: 0%;
+    height:12vh;
+}
+
+.heading{
+    text-align: left;
+    font-weight: bold;
+    color: red;
+    padding-left:7%;
+    padding-top: 2%;
+    height:auto; 
+}
+
+.title{
+    text-align: left;
+    padding-left:0%;
+    padding-top: 0%; 
+    height: 70%;
+}
+
+.safe{
+    color:navy;
+    font-Size:70px;
+    padding-top:0; 
+    padding-Bottom:0;
+    text-decoration: underline red
+}
+
+.Description{
+    padding-left:7%;
+    padding-top: 2%; 
+}
+
+.redline{
+    background-color: #e83027;
+    margin-top:0;
+    margin-left:7%;
+    height:2%;
+    width:40%;
+}
+
+.section-B-left{
+    background-color: #e83027;
+    height:100%;
+    width:50%;
+}
+.section-B-right{
+    background-color: #13b8b5;
+    height:100%;
+    width:50%;
+}
