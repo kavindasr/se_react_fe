@@ -1,7 +1,7 @@
 import React from 'react';
-import {Navbar,Nav} from 'react-bootstrap';
+import {Navbar,Nav, Button} from 'react-bootstrap';
 import img from './logo.png';
-import { FaUser } from "react-icons/fa";
+import { RiLoginBoxLine } from "react-icons/ri";
 function NavBar(){
     return (
         <Navbar bg="dark" variant="dark" expand="sm" sticky="top" fixed='top'>
@@ -22,7 +22,7 @@ function NavBar(){
                     <Nav.Link href="/EmergencyNumbers">Report complaint</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#sign_in">Sign-in {'  '} <FaUser/></Nav.Link>
+                    <Button variant="outline-light" href="#sign_in">{'Login    '} <RiLoginBoxLine/></Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -106,7 +106,6 @@ function LawTalk(){
     ];
 
     const findArticle = ()=>{
-        console.log(selectedArticle, "HEEE");
         return (data.find(item =>item.post_id === selectedArticle));
     }
 
