@@ -22,7 +22,7 @@ function NavBar(){
                     <Nav.Link href="/EmergencyNumbers">Report complaint</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Button variant="outline-light" href="#sign_in">{'Login    '} <RiLoginBoxLine/></Button>
+                    <Button variant="outline-light" href="/Login">{'Login    '} <RiLoginBoxLine/></Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
