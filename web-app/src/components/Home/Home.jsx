@@ -1,35 +1,33 @@
 import React, { Component } from 'react'
-import { Alert } from 'react-bootstrap';
-import { FaUnderline } from 'react-icons/fa';
+import { Container,Col,Row, Media} from 'react-bootstrap';
+import { FaHandsHelping,FaTaxi} from 'react-icons/fa';
 import "./Home.css"
 
 class Home extends Component{
     render(){
         return(
-            <div className='home-parent'>
-                <div className='left'>
-                    <div className='section-A'>
+            <Container fluid className='home-parent'>
+                <Row>
+                <Col className='left'>
+                    <Media>
+                        <Media.Body>
                         <h1 className='heading'>CRIME WATCH</h1>
-                        <div className='title'>
-                            <h1 className='heading' style={{color:"navy", fontSize:70 , paddingBottom:0, paddingleft:10} }>You are<br/>Safe!<br/></h1>
-                            <div className='redline'></div>
-                            <p className='Description'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam eius dolorum deserunt. Vero pariatur dolorem voluptas accusamus consequatur, odit vel vitae ut iusto? Fugiat, corporis a inventore consequatur officia sunt?</p>
+                        <h1 className='heading' style={{color:"navy", fontSize:70 , paddingBottom:0, paddingleft:10} }>You are<br/>Safe!<br/></h1>
+                        <div className="hline"><hr style={{height: '10px', backgroundColor: '#f70d1a',paddingLeft:"20px"}} /></div>
+                        <p className='Description'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam eius dolorum deserunt. Vero pariatur dolorem voluptas accusamus consequatur, odit vel vitae ut iusto? Fugiat, corporis a inventore consequatur officia sunt?</p>
+                        <div className="Buttondiv">
+                            <button type="button" className="button1" onclick="window.location.href='/EmergencyNumbers'">Emergency<br/><FaTaxi/></button>
+                            <button type="button" className="button2" onclick="window.location.href='/page2'">Help<br/><FaHandsHelping /></button>
                         </div>
-                    </div>
-                    <div className='section-B' role="button">
-                        <div className='section-B-left'role="button">
-                            <h1 style={{textAlign:'center', padding:0, }}>EMERGENCY</h1>
+                        <div className="numberdiv">
+                            <h2 style={{color:"white", fontsize:60, padding:0}}><strong>CALL US -119</strong></h2>
                         </div>
-                        <div className='section-B-right' role="button">
-                            <h1 style={{textAlign:'center', padding:0,}}>HELP</h1>
-                        </div>
-                    </div>
-                    <div className='section-c'>
-                        <h2 style={{color:"white", fontsize:60, padding:0}}><strong>CALL US -119</strong></h2>    
-                    </div>
-                </div>
-                <div className='right'></div>
-            </div>
+                        </Media.Body>
+                    </Media>    
+                </Col>
+                <Col className='right'></Col>
+            </Row>
+            </Container>
         )
     }
 } 
