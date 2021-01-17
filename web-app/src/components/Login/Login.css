@@ -1,0 +1,17 @@
+.heading{
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    background-image: url("./form-v9.jpg");
+    color: lavenderblush;
+}
+.Form{
+    padding-left:20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    
+}
+
+.form-label{
+    font-size: 20px;
+}
