@@ -9,7 +9,7 @@ class LoginForm extends CustomForm {
         return (
             <div className="page">
                 <Form className="Form">
-                    <h1 className = 'heading' >Login</h1>
+                    <h1 className = 'heading1' >Login</h1>
                     {this.renderFormInput(
                         {   controlId: "formBasicEmail", 
                             label: "Email Address", 
