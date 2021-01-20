@@ -7,6 +7,7 @@ import LawTalk from './components/LawTalk/LawTalk';
 import ComplaintForm from "./components/ComplaintForm/ComplaintForm";
 import LoginForm from "./components/Login/Login"
 import Home from "./components/Home/Home"
+import registration from "./components/RegistrationForm/RegistrationForm"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/complaint' component={ComplaintForm} />
         <Route path='/Login' component={LoginForm} />
         <Route path='/Home' component={Home} />
+        <Route path='/Register' component={registration} />
       </Switch>
     </Router>
   );
