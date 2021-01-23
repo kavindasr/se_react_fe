@@ -1,0 +1,7 @@
+.div-conainer{
+    width: 230px;
+    margin: 5px;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+}

@@ -8,11 +8,14 @@ import ComplaintForm from "./components/ComplaintForm/ComplaintForm";
 import LoginForm from "./components/Login/Login"
 import Home from "./components/Home/Home"
 import registration from "./components/RegistrationForm/RegistrationForm"
+import Notification from "./components/Notification/Notification";
+import Comp from "./components/sampleCom/Comp";
 
 const App = () => {
   return (
     <Router>
       <NavBar/>
+      <Notification/>
       <Switch>
         <Route path='/AboutUs' component={Aboutus} />
         <Route path='/EmergencyNumbers' component={Emergency} />
@@ -21,6 +24,7 @@ const App = () => {
         <Route path='/Login' component={LoginForm} />
         <Route path='/Home' component={Home} />
         <Route path='/Register' component={registration} />
+        <Route path='/' component={Comp} />
       </Switch>
     </Router>
   );
