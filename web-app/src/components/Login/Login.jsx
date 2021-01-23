@@ -1,37 +1,68 @@
-import React from 'react';
+import {React, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import CustomForm from './CustomForm';
+import {useHistory} from 'react-router-dom';
+import {useCookies} from 'react-cookie';
 import "./Login.css"
 
-class LoginForm extends CustomForm {
-    
-    render() {
-        return (
-            <div className="page">
-                <Form className="Form">
-                    <h1 className = 'heading1' >Login</h1>
-                    {this.renderFormInput(
-                        {   controlId: "formBasicEmail", 
-                            label: "Email Address", 
-                            type:'email', 
-                            placeholder:'Enter Your Email',
-                            size: 'lg'
-                    
-                        }) 
-                    }
-                    {this.renderFormInput(
-                        {   controlId: "formBasicPassword", 
-                            label: "Password", 
-                            type:'password', 
-                            placeholder:'Enter Your Password', 
-                            size: 'lg'
-                        }) 
-                    }
-                    <Button>Log in</Button>
-                </Form>   
-            </div>
-        );
+function LoginForm({handleLog}){
+    const [email,setEmail] = useState('');
+    const [pass,setPass] = useState('');
+    const history = useHistory();
+    const [cookie,setCookie] = useCookies(['loggedIn']);
+
+    const handleSubmit = async (event)=>{
+        event.preventDefault();
+        try{
+            const res = await fetch(process.env.REACT_APP_API_HOST+'/api/login',{
+                method:'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nic:email,
+                    password:pass
+                })
+            });
+            const data = await res.json();
+            if(data.status == 'error'){
+                alert(data.message);
+            }
+            else{
+                console.log("suucc")
+                setCookie('loggedIn', {level:data.level, id:data.id, nic:email}, { path: '/' });
+                handleLog(data.level);
+                if(data.level == 1){
+                    history.push('/lawyer');
+                }
+                if(data.level == 2){
+                    history.push('/police');
+                }
+                
+            }
+        }
+        catch(e){
+            console.log(e.message)
+        }
+        
+
     }
+
+    return (
+        <div className="page">
+            <Form className="Form" onSubmit={handleSubmit}>
+                <h1 className = 'heading1' >Login</h1>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label className = 'form-label'> Email Address</Form.Label>
+                    <Form.Control onChange={(event)=>setEmail(event.target.value)} type="text" placeholder='Enter Your Email' size = 'lg' />
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label className = 'form-label'>Password</Form.Label>
+                    <Form.Control onChange={(event)=>setPass(event.target.value)} type='password' placeholder='Enter Your Password' size = 'lg'/>
+                    <Form.Text className="text-muted"></Form.Text>
+                </Form.Group>
+                <Button type="submit">Log in</Button>
+            </Form>   
+        </div>
+    );
 }
 
 export default LoginForm;

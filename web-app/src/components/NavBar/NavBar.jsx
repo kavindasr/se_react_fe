@@ -2,7 +2,15 @@ import React from 'react';
 import {Navbar,Nav, Button} from 'react-bootstrap';
 import img from './logo.png';
 import { RiLoginBoxLine } from "react-icons/ri";
-function NavBar(){
+
+function NavBar({addition}){
+    var user = '';
+    if(addition === 1 ){
+        user = 'lawyer';
+    }
+    else if(addition === 2){
+        user = 'police';
+    }
     return (
         <Navbar bg="dark" variant="dark" expand="sm" sticky="top" fixed='top'>
             <Navbar.Brand href="#home">
@@ -20,6 +28,7 @@ function NavBar(){
                     <Nav.Link href="/complaint">Home</Nav.Link>
                     <Nav.Link href="/lawTalk">LawTalk</Nav.Link>
                     <Nav.Link href="/EmergencyNumbers">Report complaint</Nav.Link>
+                    {(addition!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}
                 </Nav>
                 <Nav>
                     <Button variant="outline-light" href="/Login">{'Login    '} <RiLoginBoxLine/></Button>
