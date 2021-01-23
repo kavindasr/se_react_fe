@@ -1,10 +1,25 @@
-import React, { Component } from 'react'
-import { Container,Col,Row, Media} from 'react-bootstrap';
+import React, { Component , useState} from 'react'
+import {withRouter} from 'history/createBrowserHistory'
+import { Container,Col,Row, Media, Navbar} from 'react-bootstrap';
 import { FaHandsHelping,FaTaxi} from 'react-icons/fa';
+import Aboutus from '../Aboutus/Aboutus';
+import Emergency from '../Emergency/Emergency';
 import "./Home.css"
 
 class Home extends Component{
-    render(){
+    
+     
+    clickHandler1=()=>{
+        this.props.history.push("/EmergencyNumbers");
+        console.log("Button clicked");    
+    } 
+
+    clickHandler2=()=>{
+        this.props.history.push("/AboutUs");
+        console.log("Button clicked");    
+    }  
+
+    render(){ 
         return(
             <Container fluid className='home-parent'>
                 <Row>
@@ -15,12 +30,14 @@ class Home extends Component{
                         <h1 className='heading' style={{color:"navy", fontSize:70 , paddingBottom:0, paddingleft:10} }>You are<br/>Safe!<br/></h1>
                         <div className="hline"><hr style={{height: '10px', backgroundColor: '#f70d1a',paddingLeft:"20px"}} /></div>
                         <p className='Description'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam eius dolorum deserunt. Vero pariatur dolorem voluptas accusamus consequatur, odit vel vitae ut iusto? Fugiat, corporis a inventore consequatur officia sunt?</p>
-                        <div className="Buttondiv">
-                            <button type="button" className="button1" onclick="window.location.href='/EmergencyNumbers'">Emergency<br/><FaTaxi/></button>
-                            <button type="button" className="button2" onclick="window.location.href='/page2'">Help<br/><FaHandsHelping /></button>
-                        </div>
-                        <div className="numberdiv">
-                            <h2 style={{color:"white", fontsize:60, padding:0}}><strong>CALL US -119</strong></h2>
+                        <div className="BottomDiv">
+                            <div className="Buttondiv">
+                                <button type="success" className="button1" onClick={this.clickHandler1}>Emergency<br/><FaTaxi/></button>
+                                <button type="success" className="button2" onClick={this.clickHandler2}>Help<br/><FaHandsHelping /></button>
+                            </div>
+                            <div className="numberdiv">
+                                <h2 style={{color:"white", fontsize:60, padding:0}}><strong>CALL US -119</strong></h2>
+                            </div>
                         </div>
                         </Media.Body>
                     </Media>    
