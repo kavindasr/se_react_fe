@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import {React,  useEffect, useState } from 'react';
 import { BrowserRouter as Router,Redirect,Route, Switch } from 'react-router-dom'
 import Aboutus from './components/Aboutus/Aboutus';
 import Emergency from './components/Emergency/Emergency';
@@ -15,9 +15,10 @@ import {useCookies} from 'react-cookie';
 //<Notification/>
 const App = () => {
   const [cookie,setCookie] = useCookies(['loggedIn']);
-  const [loggedIn,setLoggedIn] = useState('');
-  console.log(cookie);
-  console.log(loggedIn,'heee')
+  var val;
+  (cookie.loggedIn)? val = cookie.loggedIn.level: val =''
+  const [loggedIn,setLoggedIn] = useState(val);
+
   useEffect(()=>{
     if(cookie.loggedIn){
       setLoggedIn(cookie.loggedIn.level);
