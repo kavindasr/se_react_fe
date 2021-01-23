@@ -1,0 +1,33 @@
+.header{
+    padding-left: 15%;
+}
+ul.header li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+  }
+ul.header {
+    background: linear-gradient(to bottom, #33cccc 0%, #336699 100%);
+    padding: 0;
+  }
+  ul.header li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 25px;
+    padding-right: 20%;
+    padding-left: 5%;
+    display: inline-block;
+  }
+  .content {
+    background-color: #FFF;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  .content h2 {
+    padding: 0;
+    margin: 0;
+  }
+  .content li {
+    margin-bottom: 10px;
+  }
