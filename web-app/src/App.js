@@ -11,6 +11,7 @@ import registration from "./components/RegistrationForm/RegistrationForm"
 import Notification from "./components/Notification/Notification";
 import Comp from "./components/sampleCom/Comp";
 import Lawyer from "./components/LawEdit/Lawyer";
+import IconLabelTabs from "./components/PoliceUI/Main";
 import {useCookies} from 'react-cookie';
 //<Notification/>
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
         <Route path='/Register' component={registration} />
         <Route path='/lawyer'>{loggedIn===1? <Lawyer/>: <Redirect to='/'/>}</Route> 
         <Route path='/' component={Home} />
+        <Route path='/Tab' component={IconLabelTabs} />
       </Switch>
     </Router>
   );
