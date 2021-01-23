@@ -28,7 +28,7 @@ function NavBar({addition}){
                     <Nav.Link href="/complaint">Home</Nav.Link>
                     <Nav.Link href="/lawTalk">LawTalk</Nav.Link>
                     <Nav.Link href="/EmergencyNumbers">Report complaint</Nav.Link>
-                    {(addition!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}
+                    {(user!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}
                 </Nav>
                 <Nav>
                     <Button variant="outline-light" href="/Login">{'Login    '} <RiLoginBoxLine/></Button>
