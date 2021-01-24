@@ -9,6 +9,45 @@ function Registration() {
     const [inp4,setInp4] = useState('');
     const [inp5,setInp5] = useState('');
     const [inp6,setInp6] = useState('');
+    const [inp7,setInp7] = useState('');
+    
+     const handleSub =async (event)=>{
+        event.preventDefault();
+        try{
+            const res = await fetch(process.env.REACT_APP_API_HOST+'/api/register',{
+                method:'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nic:inp3,
+                    first_name:inp1,
+                    last_name:inp2,
+                    email:inp5,
+                    password:inp6,
+                    mobile:inp4,
+                    level:inp7,
+                    status:"0"
+                })
+            })
+            const data =await res.json();
+            console.log(data,data.msg);
+            if(data.msg == "Success"){
+                alert('Registered successfully!');
+            }
+            else{
+                alert('Somthing went wrong!')
+            }
+            setInp1('');
+            setInp2('');
+            setInp3('');
+            setInp4('');
+            setInp5('');
+            setInp6('');
+            setInp7('');
+        }
+        catch(e){
+            console.log('Error');
+        }
+    }
     return(
         <Container fluid>
         <Row>
@@ -26,7 +65,7 @@ function Registration() {
                     <Media.Body>
                         <h2 className="registration-main" style={{paddingTop:"2%"}}>Registration</h2>
                         <div className="form">
-                            <form>
+                            <form onSubmit={handleSub}>
                                 <div className="form-row" style={{paddingTop:"3%"}}>
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputName">First name</label>
@@ -64,7 +103,7 @@ function Registration() {
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputLevel">Level</label>
-                                            <select class="form-control" id="exampleFormControlSelect1">
+                                            <select onChange={(event)=>setInp7(event.target.value)}class="form-control" id="exampleFormControlSelect1">
                                                 <option>1</option>
                                                 <option>2</option>
                                             </select>
