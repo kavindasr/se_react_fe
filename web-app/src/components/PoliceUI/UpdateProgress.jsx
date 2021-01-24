@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import EditIcon from "@material-ui/icons/EditOutlined";
 import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
 import RevertIcon from "@material-ui/icons/NotInterestedOutlined";
+import axios from "axios"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,6 +46,7 @@ const createData = (ID, description,status) => ({
 const CustomTableCell = ({ row, name, onChange }) => {
   const classes = useStyles();
   const { isEditMode } = row;
+
   return (
     <TableCell align="left" className={classes.tableCell}>
       {isEditMode ? (
@@ -62,14 +64,20 @@ const CustomTableCell = ({ row, name, onChange }) => {
 };
 
 export default function Progress() {
+
   const [rows, setRows] = React.useState([
-    createData("01", "yhiojijoiewi", "Considered"),
-    createData("03", "jbjhiedQ", "Unconsidered"),
-    createData("04", "bhbjnjwe", "Unconsidered")
+
   ]);
+  
   const [previous, setPrevious] = React.useState({});
   const classes = useStyles();
-
+  useEffect(()=>{
+    const call =async () => {
+      const res = await axios.get("https://government-and-law.herokuapp.com/api/police/complaints")
+      setRows(res.data.complaints)
+    }
+    call()
+  },[])
   const onToggleEditMode = id => {
     setRows(state => {
       return rows.map(row => {
@@ -151,8 +159,8 @@ export default function Progress() {
                   </IconButton>
                 )}
               </TableCell>
-              <CustomTableCell {...{ row, name: "ID", onChange }} />
-              <CustomTableCell {...{ row, name: "description", onChange }} />
+              <CustomTableCell {...{ row, name: "id", onChange }} />
+              <CustomTableCell {...{ row, name: "complaint", onChange }} />
               <CustomTableCell {...{ row, name: "status", onChange }} />
             </TableRow>
           ))}
