@@ -41,8 +41,8 @@ const App = () => {
         <Route path='/Home' component={Home} />
         <Route path='/Register' component={registration} />
         <Route path='/lawyer'>{loggedIn===1? <Lawyer/>: <Redirect to='/'/>}</Route> 
+        <Route path='/police'>{loggedIn===2?<IconLabelTabs/>:<Redirect to='/' />}</Route>
         <Route path='/' component={Home} />
-        <Route path='/Tab' component={IconLabelTabs} />
       </Switch>
     </Router>
   );

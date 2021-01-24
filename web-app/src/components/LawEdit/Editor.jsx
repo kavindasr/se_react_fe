@@ -24,16 +24,28 @@ const setConfig = {
 
 function Editor({onSub}){
     const [body, setBody] = useState('')
+    const [title,setTitle] = useState('');
+    const [author,setAuthor] = useState('');
+    const [uploadImg,setUploadImg] = useState('');
 
     ClassicEditor.defaultConfig = setConfig
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        onSub({ body })
+        onSub({ title:title,body:body,author:author,img:uploadImg });
+        setBody('');
+        setTitle('');
+        setAuthor('');
     }
     return (
         <Form onSubmit={handleSubmit}>
-                <Form.Label>New article</Form.Label>
+                <Form.Label><h1>New article</h1></Form.Label>
+                <br/>
+                <Form.Label>Title</Form.Label>
+                <Form.Control type="text" value={title} placeholder="Title" onChange={(event)=>setTitle(event.target.value)}/>
+                <Form.Label>Author</Form.Label>
+                <Form.Control type="text" value={author} placeholder="Author's name" onChange={(event)=>setAuthor(event.target.value)}/>
+                <br />
                 <CKEditor
                     editor={ClassicEditor}
                     onChange={(event, editor) => {
@@ -43,7 +55,7 @@ function Editor({onSub}){
                 />
                 <br/>
                 <Form.Label>Upload image :</Form.Label>
-                <input type={'file'} />
+                <input type={'file'} onChange={(event)=>setUploadImg(event.target.files[0])} />
                 <br/>
                 <Button variant={'primary'} type='submit'>Submit</Button>
             </Form>

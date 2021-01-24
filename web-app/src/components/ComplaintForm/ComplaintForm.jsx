@@ -15,8 +15,8 @@ function ComplaintForm(){
                     <Media>
                         <Media.Body>
                             <h1 style={{color: 'white',paddingLeft:"20%",paddingRight:"20%",paddingTop:"10%",paddingBottom:"10%"}}>Register your<br/> complaint</h1>
-                            <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae repudiandae eveniet in molestias, incidunt perferendis ipsum molestiae, adipisci autem aut alias necessitatibus animi temporibus, maxime rerum nesciunt! Facere, dolore voluptatem?</p>
-                            <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}><strong>DISCLAIMER:</strong><br/>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur harum, provident soluta, natus facilis ut repudiandae qui perspiciatis inventore possimus veritatis ea voluptates culpa tenetur, rerum doloribus ducimus corporis dolorem.<br/><br/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsa corporis officiis molestiae cupiditate minus ducimus odit numquam itaque maxime vero consequatur, atque expedita dolorem suscipit explicabo id adipisci repellendus.</p>
+                            <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}>A person can make a complaint about injustice through this without physically going to a police station.</p>
+                            <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}><strong>DISCLAIMER:</strong><br/>CrimeWatch has made every attempt to ensure the accuracy and reliability of the information provided on this web site. However the information is provided as is with warranty.<br/><br/> CrimeWatch accept all the responsibilities and liabilities for the accuracy, content, completeness,legality and reliability of the information contained on this website</p>
                         </Media.Body>
                     </Media>
                 </Col>
