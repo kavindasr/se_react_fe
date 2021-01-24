@@ -6,20 +6,7 @@ import TableRow from './TableRow';
  
 class RIC extends Component {
   state = {
-    data: {
-      1: {
-        Crime_ID: '56',
-        Portrait: "jjo",
-      },
-      2: {
-        Crime_ID: '94',
-        Portrait:"giij",
-      },
-      3: {
-        Crime_ID: '34',
-        Portrait: "hbjbjd",
-      }
-    }
+    data: []
   };
 
   toggleAddModal = () => {
@@ -40,10 +27,40 @@ class RIC extends Component {
       delete prevState.data[id];
       return prevState;
     })
+    fetch(process.env.REACT_APP_API_HOST+'/api/police/wanteds',{
+      method:'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id : this.props.id
+      })
+  });
   }
 
   checkId = (value) => {
     return !this.state.data[value] || 'That Criminal ID already exists, please edit the existing row or pick another one.'
+  }
+
+  componentDidMount() {
+    console.log(process.env.REACT_APP_API_HOST+"/api/police/wanteds")
+    fetch(process.env.REACT_APP_API_HOST+"/api/police/wanteds")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log(result)
+          this.setState({
+            data :  result.wanteds
+         });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
   }
   render() {
     return (
@@ -57,9 +74,9 @@ class RIC extends Component {
           <Table striped bordered hover size="sm">
             <thead>
               <tr>
-                <th>Criminal ID</th>
-                <th>Crime ID</th>
-                <th>Portrait</th>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
               </tr>
             </thead>
             <tbody>
@@ -76,9 +93,9 @@ class RIC extends Component {
             Add a new people
           </ModalHeader>
           <ModalBody>
-            <AvField label="Criminal ID" name="id" required validate={{checkId: this.checkId}} />
-            <AvField label="Crime ID" name="Crime_ID" required />
-            <AvField label="Portrait" name="Portrait" required />
+            <AvField label="ID" name="id" required validate={{checkId: this.checkId}} />
+            <AvField label="First Name" name="first_name" required />
+            <AvField label="Last Name" name="last_name" required />
           </ModalBody>
           <ModalFooter>
             <Button>Save</Button>
