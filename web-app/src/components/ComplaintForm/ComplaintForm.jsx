@@ -16,7 +16,7 @@ function ComplaintForm(){
                         <Media.Body>
                             <h1 style={{color: 'white',paddingLeft:"20%",paddingRight:"20%",paddingTop:"10%",paddingBottom:"10%"}}>Register your<br/> complaint</h1>
                             <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}>A person can make a complaint about injustice through this without physically going to a police station.</p>
-                            <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}><strong>DISCLAIMER:</strong><br/>CrimeWatch has made every attempt to ensure the accuracy and reliability of the information provided on this web site. However the information is provided as is without warranty of any kind.<br/><br/> CrimeWatch does not accept any responsibility or liability for the accuracy, content, completeness,legality or reliability of the information contained on this website</p>
+                            <p style={{color: 'white',paddingLeft:"20%",paddingRight:"20%"}}><strong>DISCLAIMER:</strong><br/>CrimeWatch has made every attempt to ensure the accuracy and reliability of the information provided on this web site. However the information is provided as is with warranty.<br/><br/> CrimeWatch accept all the responsibilities and liabilities for the accuracy, content, completeness,legality and reliability of the information contained on this website</p>
                         </Media.Body>
                     </Media>
                 </Col>

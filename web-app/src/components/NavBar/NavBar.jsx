@@ -41,9 +41,9 @@ function NavBar({addition}){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/complaint">Home</Nav.Link>
+                    <Nav.Link href="/Home">Home</Nav.Link>
                     <Nav.Link href="/lawTalk">LawTalk</Nav.Link>
-                    <Nav.Link href="/EmergencyNumbers">Report complaint</Nav.Link>
+                    <Nav.Link href="/complaint">Report complaint</Nav.Link>
                     {(user!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}
                 </Nav>
                 <Nav>
