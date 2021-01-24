@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import {Card,Button} from 'react-bootstrap';
 import SubmitForm from './SubmitForm';
 
-function IrcCard({id,name,img,last_seen,description}){
+function IrcCard({id,fname,lname,img,last_seen,description}){
     const [isClicked,setClick] = useState(false);
     return (
         <>
             <Card>
                 <Card.Img variant="top" src={img} />
-                <Card.Header>Last seen at :{last_seen}</Card.Header>
+                <Card.Header>{last_seen}</Card.Header>
                 <Card.Body>
-                    <Card.Title>Name : {name}</Card.Title>
+                    <Card.Title>Name : {fname+" "+lname}</Card.Title>
                     <Card.Subtitle>IRC identification number :{id}</Card.Subtitle>
                     <Card.Text><br/><b>Description :</b>{description}</Card.Text>
                     <Button variant='warning' onClick={()=>setClick(true)}>Report</Button>

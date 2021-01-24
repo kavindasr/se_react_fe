@@ -29,7 +29,7 @@ function NavBar({addition}){
 
     return (
         <Navbar bg="dark" variant="dark" expand="sm" sticky="top" fixed='top'>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 <img
                     alt=""
                     src={img}
@@ -41,7 +41,7 @@ function NavBar({addition}){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/Home">Home</Nav.Link>
+                    <Nav.Link href="/ircDeck">IRC List</Nav.Link>
                     <Nav.Link href="/lawTalk">LawTalk</Nav.Link>
                     <Nav.Link href="/complaint">Report complaint</Nav.Link>
                     {(user!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}

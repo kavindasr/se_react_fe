@@ -8,7 +8,14 @@ import data from './sample.json';
 function IrcDeck(){
     const [ircList,setIrcList] = useState([]);
     useEffect(()=>{
-        setIrcList(data);
+        const run = async ()=>{
+            const res = await fetch(process.env.REACT_APP_API_HOST+'/api/suspects');
+            const data = await res.json();
+            console.log(data);
+            setIrcList(data.suspects);
+        }
+        run()
+        
     },[]);
     
     return (
@@ -20,10 +27,11 @@ function IrcDeck(){
                         <IrcCard 
                             key = {person.id}
                             id = {person.id}
-                            name = {person.name}
-                            img = {person.img}
+                            fname = {person.first_name}
+                            lname = {person.last_name}
+                            img = {person.image}
                             description = {person.description}
-                            last_seen = {person.last_seen} 
+                            last_seen = ""
                         />
                     );
                 })}
