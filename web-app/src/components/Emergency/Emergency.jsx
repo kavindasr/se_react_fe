@@ -18,7 +18,7 @@ class Emergency extends Component {
                             <Media.Body>
                                 <div className="vline"></div>
                                 <h1 style={styleObj}>Emergency Numbers</h1>
-                                <p style={styleObject}><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. A unde aut molestiae beatae sed reprehenderit nobis. Totam, dolorem, ad voluptatem officiis obcaecati aliquid hic deserunt voluptatum veniam eos, veritatis aperiam?</strong></p>
+                                <p style={styleObject}><strong>Any kind of emergency can be informed through emergency numbers which are available 24 hours a day, 7 days a week.You will be respond within few minutes.</strong></p>
                             </Media.Body>
                        </Media>
                      </Col>
