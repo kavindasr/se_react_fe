@@ -12,7 +12,7 @@ import LawTalk from "./components/LawTalk/LawTalk";
 import ComplaintForm from "./components/ComplaintForm/ComplaintForm";
 import LoginForm from "./components/Login/Login";
 import Home from "./components/Home/Home";
-import registration from "./components/RegistrationForm/RegistrationForm";
+import UserReg from "./components/UserRegistration/UserRegistration";
 import Notification from "./components/Notification/Notification";
 import Lawyer from "./components/LawEdit/Lawyer";
 import IconLabelTabs from "./components/PoliceUI/Main";
@@ -43,7 +43,7 @@ const App = () => {
           )}
         />
         <Route path="/ircDeck" component={IrcDeck} />
-        <Route path="/Register" component={registration} />
+        <Route path="/Register" component={UserReg} />
         <Route path="/lawyer">
           {loggedIn === 1 ? <Lawyer /> : <Redirect to="/" />}
         </Route>

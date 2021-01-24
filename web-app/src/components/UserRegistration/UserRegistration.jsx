@@ -8,6 +8,41 @@ function UserReg(){
     const [inp3,setInp3] = useState('');
     const [inp4,setInp4] = useState('');
     const [inp5,setInp5] = useState('');
+    const handleSub =async (event)=>{
+        event.preventDefault();
+        try{
+            const res = await fetch(process.env.REACT_APP_API_HOST+'/api/register',{
+                method:'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nic:inp2,
+                    first_name:inp1,
+                    last_name:"",
+                    email:inp4,
+                    password:inp5,
+                    mobile:inp3,
+                    level:"0",
+                    status:"0"
+                })
+            })
+            const data =await res.json();
+            console.log(data,data.msg);
+            if(data.msg == "Success"){
+                alert('Registered successfully!');
+            }
+            else{
+                alert('Somthing went wrong!')
+            }
+            setInp1('');
+            setInp2('');
+            setInp3('');
+            setInp4('');
+            setInp5('');
+        }
+        catch(e){
+            console.log('Error');
+        }
+    }
     return(
         <Container fluid>
         <Row>
@@ -25,7 +60,7 @@ function UserReg(){
                     <Media.Body>
                         <h2 className="registration-main" style={{paddingTop:"2%"}}>User Registration</h2>
                         <div className="form">
-                            <form>
+                            <form onSubmit={handleSub}>
                                 <div className="form-row" style={{paddingTop:"3%"}}>
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputName">Full name</label>
@@ -47,13 +82,13 @@ function UserReg(){
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputID">E-Mail</label>
-                                        <input onChange={(event)=>setInp4(event.target.value)} type="text" className="form-control" id="inputID" placeholder="E-Mail" />
+                                        <input onChange={(event)=>setInp4(event.target.value)} type="email" className="form-control" id="inputID" placeholder="E-Mail" />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputPassword">Password</label>
-                                        <input onChange={(event)=>setInp5(event.target.value)} type="text" className="form-control" id="inputPassword" placeholder="Password" required/>
+                                        <input onChange={(event)=>setInp5(event.target.value)} type="password" className="form-control" id="inputPassword" placeholder="Password" required/>
                                     </div>
                                 </div>
                                 <div className="form-row">
@@ -64,11 +99,12 @@ function UserReg(){
                                             </select>
                                     </div>
                                 </div>
+                                <br />
+                                <input className="btn btn-outline-primary" type="reset" value="Reset"></input>
+                                <input className="btn btn-outline-danger waves-effect" type="submit" value="Submit"></input>
                             </form>
                         </div>
-                        <br />
-                        <input className="btn btn-outline-primary" type="reset" value="Reset"></input>
-                        <input className="btn btn-outline-danger waves-effect" type="submit" value="Submit"></input>
+                        
                     </Media.Body>
                 </Media>
             </Col>
