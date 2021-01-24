@@ -64,7 +64,7 @@ function UserReg(){
                                 <div className="form-row" style={{paddingTop:"3%"}}>
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputName">Full name</label>
-                                        <input onChange={(event)=>setInp1(event.target.value)} type="text" className="form-control" id="inputName" placeholder="First name" />
+                                        <input onChange={(event)=>setInp1(event.target.value)} type="text" className="form-control" id="inputName" placeholder="First name"  minlength="2" maxlength="10" size="12"/>
                                     </div>
                                 </div>
                                 <div className="form-row">
@@ -76,7 +76,7 @@ function UserReg(){
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputContactnumber">Contact number</label>
-                                        <input onChange={(event)=>setInp3(event.target.value)} type="text" className="form-control" id="inputContactnumber" placeholder="Contact number" />
+                                        <input onChange={(event)=>setInp3(event.target.value)} type="text" className="form-control" id="inputContactnumber" placeholder="Contact number" maxlength="10"/>
                                     </div>
                                 </div>
                                 <div className="form-row">

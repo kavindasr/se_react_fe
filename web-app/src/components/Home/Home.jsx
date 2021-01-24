@@ -29,7 +29,7 @@ class Home extends Component{
                         <h1 className='heading'>CRIME WATCH</h1>
                         <h1 className='heading' style={{color:"navy", fontSize:70 , paddingBottom:0, paddingleft:10} }>You are<br/>Safe!<br/></h1>
                         <div className="hline"><hr style={{height: '10px', backgroundColor: '#f70d1a',paddingLeft:"20px"}} /></div>
-                        <p className='Description'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam eius dolorum deserunt. Vero pariatur dolorem voluptas accusamus consequatur, odit vel vitae ut iusto? Fugiat, corporis a inventore consequatur officia sunt?</p>
+                        <p className='Description'>We provide legal solutions and practical, reliable sevice to get justice without any fear for those who have faced many struggles.</p>
                         <div className="BottomDiv">
                             <div className="Buttondiv">
                                 <button type="success" className="button1" onClick={this.clickHandler1}>Emergency<br/><FaTaxi/></button>
