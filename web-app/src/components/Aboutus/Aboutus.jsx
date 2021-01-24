@@ -14,7 +14,7 @@ class Aboutus extends Component {
                     <Col className="Lcolumn" lg={6}>
                         <div class="vl"></div>
                         <h1 style={styleObj}>WHY WE?</h1>
-                        <p style={styleob}>Lorem ipsum dolor sit amet consectetur adipisicing elit. A unde aut molestiae beatae sed reprehenderit nobis. Totam, dolorem, ad voluptatem officiis obcaecati aliquid hic deserunt voluptatum veniam eos, veritatis aperiam?</p>
+                        <p style={styleob}>We have seen people face many struggles to get justice for them.We are providing a formal information management infrastructure to keep track of law abuse by authorities, keep the public aware of laws and help the public to complain about injustice.</p>
                     </Col>
                     <Col className="Rcolumn" lg={6}>
                         <div class="container-fluid">
