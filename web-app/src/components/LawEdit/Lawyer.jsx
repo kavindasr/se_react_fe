@@ -7,6 +7,9 @@ import {useCookies} from 'react-cookie';
 function Lawyer(){
     const [cookies,setCookie] = useCookies(['loggedIn']);
     const upLoadImg = async (img)=>{
+        if(!img){
+            return null;
+        }
         const formData = new FormData();
         formData.append('file',img);
         formData.append('upload_preset',"rycovost");

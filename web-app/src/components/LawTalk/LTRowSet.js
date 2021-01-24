@@ -12,8 +12,8 @@ function LTRowSet({rowItems,onClickLink}){
                         <Col md={4} >
                             <LTCard 
                                 key = {id}
-                                id = {item.post_id}
-                                img={item.img}
+                                id = {item.id}
+                                img={item.image}
                                 title={item.title}
                                 author={item.author}
                                 onClickLink = {(i)=> onClickLink(i)}
