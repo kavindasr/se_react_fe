@@ -30,6 +30,12 @@ function Lawyer(){
         });
         const data = await res.json();
         console.log(data);
+        if(data.msg == 'Added law'){
+            alert('Submitted successfully')
+        }
+        else{
+            alert('Somthing went wrong try again!');
+        }
     }
     return (
         <>

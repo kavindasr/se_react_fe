@@ -9,21 +9,18 @@ import LoginForm from "./components/Login/Login"
 import Home from "./components/Home/Home"
 import registration from "./components/RegistrationForm/RegistrationForm"
 import Notification from "./components/Notification/Notification";
-import Comp from "./components/sampleCom/Comp";
 import Lawyer from "./components/LawEdit/Lawyer";
 import IconLabelTabs from "./components/PoliceUI/Main";
 import {useCookies} from 'react-cookie';
 //<Notification/>
+
 const App = () => {
   const [cookie,setCookie] = useCookies(['loggedIn']);
   var val;
   (cookie.loggedIn)? val = cookie.loggedIn.level: val =''
   const [loggedIn,setLoggedIn] = useState(val);
-
   useEffect(()=>{
-    if(cookie.loggedIn){
-      setLoggedIn(cookie.loggedIn.level);
-    }
+
   },[])
 
   return (
@@ -37,7 +34,7 @@ const App = () => {
         <Route path='/EmergencyNumbers' component={Emergency} />
         <Route path='/lawTalk' component={LawTalk} />
         <Route path='/complaint' component={ComplaintForm} />
-        <Route path="/login" render={(props) => <LoginForm {...props} handleLog={(i)=>setLoggedIn(i)}/>} />
+        <Route path="/Login" render={(props) => <LoginForm {...props} handleLog={(i)=>setLoggedIn(i)}/>} />
         <Route path='/Home' component={Home} />
         <Route path='/Register' component={registration} />
         <Route path='/lawyer'>{loggedIn===1? <Lawyer/>: <Redirect to='/'/>}</Route> 

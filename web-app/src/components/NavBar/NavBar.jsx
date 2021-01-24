@@ -1,16 +1,32 @@
-import React from 'react';
+import {React,useState,useEffect } from 'react';
 import {Navbar,Nav, Button} from 'react-bootstrap';
+import {useCookies} from 'react-cookie';
+import {useHistory} from 'react-router-dom';
 import img from './logo.png';
 import { RiLoginBoxLine } from "react-icons/ri";
+import {GoSignOut} from 'react-icons/go';
+import {FaUserEdit} from 'react-icons/fa'
 
 function NavBar({addition}){
-    var user = '';
-    if(addition === 1 ){
-        user = 'lawyer';
+    const [cookies, setCookie, removeCookie] = useCookies(["loggedIn"]);
+    const history = useHistory();
+    const [user,setUser] = useState('');
+    
+    useEffect(()=>{
+        if(addition === 1 ){
+            setUser('lawyer');
+        }
+        else if(addition === 2){
+            setUser('police');
+        }
+    },[addition])
+
+    const handleLogout = ()=>{
+        removeCookie("loggedIn");
+        setUser('');
+        history.push("/");
     }
-    else if(addition === 2){
-        user = 'police';
-    }
+
     return (
         <Navbar bg="dark" variant="dark" expand="sm" sticky="top" fixed='top'>
             <Navbar.Brand href="#home">
@@ -31,7 +47,9 @@ function NavBar({addition}){
                     {(user!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}
                 </Nav>
                 <Nav>
-                    <Button variant="outline-light" href="/Login">{'Login    '} <RiLoginBoxLine/></Button>
+                    <Button variant="outline-light" href="/Register">{'Register    '} <FaUserEdit/></Button>
+                    {(user=='')?<Button variant="outline-light" href="/Login">{'Login    '} <RiLoginBoxLine/></Button>:<></>}
+                    {(user!='')?<Button variant="outline-light" onClick={()=>handleLogout()}>{'Logout    '} <GoSignOut/></Button>:<></>}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
