@@ -91,13 +91,13 @@ function Registration() {
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputID">E-Mail</label>
-                                        <input onChange={(event)=>setInp5(event.target.value)} type="text" className="form-control" id="inputID" placeholder="E-Mail" />
+                                        <input onChange={(event)=>setInp5(event.target.value)} type="email" className="form-control" id="inputID" placeholder="E-Mail" />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label htmlFor="inputPassword">Password</label>
-                                        <input onChange={(event)=>setInp6(event.target.value)} type="text" className="form-control" id="inputPassword" placeholder="Password" required/>
+                                        <input onChange={(event)=>setInp6(event.target.value)} type="password" className="form-control" id="inputPassword" placeholder="Password" required/>
                                     </div>
                                 </div>
                                 <div className="form-row">
