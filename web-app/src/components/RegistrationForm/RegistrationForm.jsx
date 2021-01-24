@@ -60,7 +60,6 @@ class registration extends Component{
                                         <div className="form-group col-md-6">
                                             <label htmlFor="inputLevel">Level</label>
                                                 <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>0</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                 </select>
