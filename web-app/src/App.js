@@ -18,6 +18,7 @@ import Lawyer from "./components/LawEdit/Lawyer";
 import IconLabelTabs from "./components/PoliceUI/Main";
 import { useCookies } from "react-cookie";
 import IrcDeck from "./components/irc/IrcDeck";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm"
 //<Notification/>
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
         />
         <Route path="/ircDeck" component={IrcDeck} />
         <Route path="/Register" component={UserReg} />
+        <Route path="/registration" component={RegistrationForm} />
         <Route path="/lawyer">
           {loggedIn === 1 ? <Lawyer /> : <Redirect to="/" />}
         </Route>
