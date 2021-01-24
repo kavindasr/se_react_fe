@@ -9,7 +9,7 @@ export default function view() {
   ];
 
   return (
-    <div>
+    <div style={{overflowX:"auto",overflowY:"auto"}}>
       <table class="table table-striped">
         <thead>
           <tr>

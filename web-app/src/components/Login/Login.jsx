@@ -25,8 +25,10 @@ function LoginForm({handleLog}){
             if(data.status == 'error'){
                 alert(data.message);
             }
+            else if(data.error){
+                alert(data.error);
+            }
             else{
-                console.log("suucc")
                 setCookie('loggedIn', {level:data.level, id:data.id, nic:email}, { path: '/' });
                 handleLog(data.level);
                 if(data.level == 1){
@@ -50,8 +52,8 @@ function LoginForm({handleLog}){
             <Form className="Form" onSubmit={handleSubmit}>
                 <h1 className = 'heading1' >Login</h1>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label className = 'form-label'> Email Address</Form.Label>
-                    <Form.Control onChange={(event)=>setEmail(event.target.value)} type="text" placeholder='Enter Your Email' size = 'lg' />
+                    <Form.Label className = 'form-label'>NIC number</Form.Label>
+                    <Form.Control onChange={(event)=>setEmail(event.target.value)} type="text" placeholder='Enter Your NIC' size = 'lg' />
                     <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
