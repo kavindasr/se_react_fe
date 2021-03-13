@@ -3,8 +3,8 @@ import {Image, CardColumns} from 'react-bootstrap';
 import IrcCard from './IrcCard';
 import './styles/style.css';
 import cover from './irc_cover.jpg';
-//Remove later
-import data from './sample.json';
+// Remove later
+// import data from './sample.json';
 function IrcDeck(){
     const [ircList,setIrcList] = useState([]);
     useEffect(()=>{

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kavindasr/se_react_fe/issues"
   },
-  "homepage": "https://github.com/kavindasr/se_react_fe#readme"
+  "homepage": "https://github.com/kavindasr/se_react_fe#readme",
+  "dependencies": {
+    "cypress": "^6.6.0"
+  }
 }

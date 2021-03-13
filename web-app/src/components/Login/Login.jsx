@@ -12,6 +12,7 @@ function LoginForm({handleLog}){
 
     const handleSubmit = async (event)=>{
         event.preventDefault();
+        console.log(process.env.REACT_APP_API_HOST+'/api/login');
         try{
             const res = await fetch(process.env.REACT_APP_API_HOST+'/api/login',{
                 method:'POST',
@@ -36,6 +37,9 @@ function LoginForm({handleLog}){
                 }
                 if(data.level == 2){
                     history.push('/police');
+                }
+                if(data.level === 0){
+                    history.push('/');
                 }
                 
             }

@@ -19,7 +19,7 @@ function AddNew(){
             description : des,
             image : url,
             status: 1,
-            police_id: cookies.loggedIn.id
+            police_id: "983341366V"// cookies.loggedIn.id
         }
         try{
             const res = await fetch(process.env.REACT_APP_API_HOST+'/api/police/wanteds',{

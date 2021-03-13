@@ -47,9 +47,9 @@ function NavBar({addition}){
                     {(user!='')?<Nav.Link href={"/"+user}>{user}</Nav.Link>:<></>}
                 </Nav>
                 <Nav>
-                    <Button variant="outline-light" href="/Register">{'Register    '} <FaUserEdit/></Button>
-                    {(user=='')?<Button variant="outline-light" href="/Login">{'Login    '} <RiLoginBoxLine/></Button>:<></>}
-                    {(user!='')?<Button variant="outline-light" onClick={()=>handleLogout()}>{'Logout    '} <GoSignOut/></Button>:<></>}
+                    <Button variant="outline-light" href="/Register">{'Register'}</Button>
+                    {(user=='')?<Button variant="outline-light" href="/Login">{'Login'}</Button>:<></>}
+                    {(user!='')?<Button variant="outline-light" onClick={()=>handleLogout()}>{'Logout'}</Button>:<></>}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
